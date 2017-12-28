@@ -1,0 +1,111 @@
+{
+  "name": "arkhamjs-storage-native",
+  "version": "1.0.1",
+  "description": "React Native storage for ArkhamJS",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "./lib/index.d.ts",
+  "keywords": [
+    "arkhamjs",
+    "flux",
+    "native",
+    "nitrogenlabs",
+    "storage"
+  ],
+  "author": "Giraldo Rosales <giraldo@nitrogenlabs.com> (http://nitrogenlabs.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nitrogenlabs/arkhamjs-storage-native.git"
+  },
+  "homepage": "http://www.arkhamjs.com",
+  "bugs": {
+    "url": "https://github.com/nitrogenlabs/arkhamjs-storage-native/issues"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "docs": "typedoc --target ES5 --module commonjs --out docs/ src/ --exclude src/index.ts --excludeExternals --hideGenerator",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "prepublishOnly": "NODE_ENV=production npm test && npm run compile",
+    "pretest": "npm run lint",
+    "test": "jest"
+  },
+  "typings": "dist/index",
+  "dependencies": {
+    "react-native": "^0.51.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.9",
+    "@types/node": "^8.5.2",
+    "@types/react-native": "^0.51.7",
+    "babel-preset-node6": "^11.0.0",
+    "jest": "^22.0.4",
+    "mock-async-storage": "^2.0.2",
+    "react-scripts-ts": "^2.8.0",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typedoc": "^0.9.0",
+    "typescript": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-native": ">=0.50"
+  },
+  "jest": {
+    "automock": false,
+    "bail": false,
+    "browser": false,
+    "globals": {
+      "__DEV__": true
+    },
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "providesModuleNodeModules": [
+        "react-native"
+      ]
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|png|psd|svg|webp|ttf|otf)$": "RelativeImageStub",
+      "^React$": "<rootDir>/node_modules/react"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/react-native/Libraries/react-native/",
+      "<rootDir>/node_modules/react-native/packager/"
+    ],
+    "setupFiles": [
+      "<rootDir>/node_modules/react-native/jest/setup.js",
+      "<rootDir>/jest.setup.js"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/src/**/*test.ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/?!(react-native)"
+    ],
+    "unmockedModulePathPatterns": [
+      "promise",
+      "source-map",
+      "<rootDir>/node_modules/react-native/"
+    ],
+    "verbose": false
+  },
+  "directories": {
+    "doc": "docs"
+  }
+}

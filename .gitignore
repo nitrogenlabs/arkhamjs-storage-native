@@ -1,0 +1,18 @@
+# OSX
+.DS_Store
+*.bash_profile
+*.log
+
+# node.js
+node_modules
+
+# Client Editor
+build
+.idea
+.vscode
+
+# App
+coverage
+docs
+lib
+tmp
