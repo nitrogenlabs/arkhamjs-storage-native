@@ -11,11 +11,11 @@
 
 Using [npm](https://www.npmjs.com/):
 ```bash
-$ npm install --save arkhamjs-storage-native
+$ npm install --save @nlabs/arkhamjs-storage-native
 ```
 or
 ```bash
-$ yarn add arkhamjs-storage-native
+$ yarn add @nlabs/arkhamjs-storage-native
 ```
 
 #### Documentation
