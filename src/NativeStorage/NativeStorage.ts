@@ -10,6 +10,11 @@ export class NativeStorage {
   private options: NativeStorageOptions = {};
 
   constructor(options: NativeStorageOptions = {}) {
+    // Methods
+    this.getStorageData = this.getStorageData.bind(this);
+    this.setStorageData = this.setStorageData.bind(this);
+
+    // Configuration
     this.options = {...this.options, ...options};
   }
 

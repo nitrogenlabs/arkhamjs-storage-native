@@ -1,6 +1,6 @@
 {
   "name": "@nlabs/arkhamjs-storage-native",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Native storage for ArkhamJS",
   "license": "MIT",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/nitrogenlabs/arkhamjs-storage-native.git"
   },
-  "homepage": "http://www.arkhamjs.com",
+  "homepage": "http://www.arkhamjs.io",
   "bugs": {
     "url": "https://github.com/nitrogenlabs/arkhamjs-storage-native/issues"
   },
@@ -30,9 +30,6 @@
     "test": "jest"
   },
   "typings": "dist/index",
-  "dependencies": {
-    "react-native": "^0.51.0"
-  },
   "devDependencies": {
     "@types/jest": "^21.1.9",
     "@types/node": "^8.5.2",
@@ -40,6 +37,7 @@
     "babel-preset-node6": "^11.0.0",
     "jest": "^22.0.4",
     "mock-async-storage": "^2.0.2",
+    "react-native": "^0.51.0",
     "react-scripts-ts": "^2.8.0",
     "ts-jest": "^22.0.0",
     "tslint": "^5.8.0",
