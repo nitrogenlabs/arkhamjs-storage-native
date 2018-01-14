@@ -20,4 +20,4 @@ $ yarn add @nlabs/arkhamjs-storage-native
 
 #### Documentation
 
-For detailed [Documentation](http://www.arkhamjs.io) and additional options.
+For detailed [Documentation](https://www.arkhamjs.io) and additional options.

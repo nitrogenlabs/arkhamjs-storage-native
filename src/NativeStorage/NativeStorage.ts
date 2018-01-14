@@ -68,6 +68,8 @@ export class NativeStorage {
    * @returns {Promise<boolean>} Whether data was successfully saved.
    */
   static setAsyncData(key: string, value): Promise<boolean> {
+    value = value !== undefined && JSON.stringify(value);
+
     try {
       return AsyncStorage.setItem(key, value)
         .then(() => true)
