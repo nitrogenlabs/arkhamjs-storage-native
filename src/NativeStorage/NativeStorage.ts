@@ -4,7 +4,7 @@
  */
 import {AsyncStorage} from 'react-native';
 
-export interface NativeStorageOptions {}
+import {NativeStorageOptions} from '../types/main';
 
 export class NativeStorage {
   private options: NativeStorageOptions = {};
@@ -43,10 +43,32 @@ export class NativeStorage {
   static getAsyncData(key: string): Promise<any> {
     try {
       return AsyncStorage.getItem(key)
-        .then((value: string) => value ? JSON.parse(value) : null)
+        .then((value: string) => {
+          const updatedValue = value ? JSON.parse(value) : null;
+          return updatedValue;
+        })
         .catch(() => Promise.resolve(null));
     } catch(error) {
       return Promise.resolve(null);
+    }
+  }
+
+  /**
+   * Saves data to AsyncStorage.
+   *
+   * @param {string} key Key to store data.
+   * @param {any} value Data to store.
+   * @returns {Promise<boolean>} Whether data was successfully saved.
+   */
+  static setAsyncData(key: string, value): Promise<boolean> {
+    const updatedValue = value !== undefined && JSON.stringify(value);
+
+    try {
+      return AsyncStorage.setItem(key, updatedValue)
+        .then(() => true)
+        .catch(() => Promise.resolve(false));
+    } catch(error) {
+      return Promise.resolve(false);
     }
   }
 
@@ -58,25 +80,6 @@ export class NativeStorage {
    */
   getStorageData(key: string): Promise<any> {
     return NativeStorage.getAsyncData(key);
-  }
-
-  /**
-   * Saves data to AsyncStorage.
-   *
-   * @param {string} key Key to store data.
-   * @param {any} value Data to store.
-   * @returns {Promise<boolean>} Whether data was successfully saved.
-   */
-  static setAsyncData(key: string, value): Promise<boolean> {
-    value = value !== undefined && JSON.stringify(value);
-
-    try {
-      return AsyncStorage.setItem(key, value)
-        .then(() => true)
-        .catch(() => Promise.resolve(false));
-    } catch(error) {
-      return Promise.resolve(false);
-    }
   }
 
   /**

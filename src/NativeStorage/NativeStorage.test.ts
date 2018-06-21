@@ -2,16 +2,18 @@
  * Copyright (c) 2018, Nitrogen Labs, Inc.
  * Copyrights licensed under the MIT License. See the accompanying LICENSE file for terms.
  */
-
-import {default as MockAsyncStorage} from 'mock-async-storage';
 import {AsyncStorage} from 'react-native';
+
 import {NativeStorage} from './NativeStorage';
 
 describe('NativeStorage', () => {
-  const items = {};
+  // beforeAll(() => {
+  //   const mockImpl = new MockAsyncStorage();
+  //   jest.mock('AsyncStorage', () => mockImpl);
+  // });
 
-  beforeAll(() => {
-    jest.mock('AsyncStorage', () => new MockAsyncStorage());
+  afterAll(() => {
+    // release();
   });
 
   describe('.delAsyncData', () => {
