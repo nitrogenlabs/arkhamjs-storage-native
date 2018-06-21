@@ -4,4 +4,7 @@
  */
 
 // Storage
-export {NativeStorage} from './NativeStorage/NativeStorage';
+import {NativeStorage} from './NativeStorage/NativeStorage';
+import {NativeStorageOptions} from './types/main';
+
+export {NativeStorage, NativeStorageOptions};
